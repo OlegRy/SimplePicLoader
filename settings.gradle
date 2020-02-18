@@ -1,0 +1,2 @@
+include ':app', ':picloader'
+rootProject.name='Simple Image Loader'
