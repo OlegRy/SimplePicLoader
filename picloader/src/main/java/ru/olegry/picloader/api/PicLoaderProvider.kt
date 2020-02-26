@@ -1,11 +1,11 @@
 package ru.olegry.picloader.api
 
-import ru.olegry.picloader.internal.DefaultPicLoader
+import ru.olegry.picloader.internal.core.DefaultPicLoader
 
 /**
+ * Special provider object for getting an instance of [PicLoader]
  *
- *
- * @author Олег Рябцев
+ * @author Oleg Ryabtsev
  */
 object PicLoaderProvider {
 

@@ -1,4 +1,4 @@
-package ru.olegry.picloader.internal
+package ru.olegry.picloader.internal.custom
 
 import android.graphics.Canvas
 import android.graphics.Color
@@ -8,9 +8,10 @@ import android.graphics.RectF
 import android.graphics.drawable.Drawable
 
 /**
+ * A drawable which wraps another drawable and displays progress border around it
  *
- *
- * @author Олег Рябцев
+ * @property mainDrawable a drawable which progress should be drawn around
+ * @author Oleg Ryabtsev
  */
 class BorderDrawable(
     private val mainDrawable: Drawable
@@ -56,7 +57,12 @@ class BorderDrawable(
         val width = bounds.width()
         val height = bounds.height()
         if (arcRectF == null) {
-            arcRectF = RectF(borderPaint.strokeWidth, borderPaint.strokeWidth, width.toFloat() - borderPaint.strokeWidth, height.toFloat() - borderPaint.strokeWidth)
+            arcRectF = RectF(
+                borderPaint.strokeWidth,
+                borderPaint.strokeWidth,
+                width.toFloat() - borderPaint.strokeWidth,
+                height.toFloat() - borderPaint.strokeWidth
+            )
         }
         canvas.drawArc(arcRectF!!, 270f, currentAngle, false, borderPaint)
     }
